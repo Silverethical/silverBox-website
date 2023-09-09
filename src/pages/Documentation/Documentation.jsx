@@ -5,23 +5,24 @@ const Documentation = () => {
 	const [versionNumber, setVersionNumber] = useState("");
 
 	useEffect(() => {
+		// all versions of documentation
+		const allVersions = ["1.0.0", "1.1.0", "1.2.0"];
+
+		// version number from query string url
+		let queryStringVersionNumber = getParameterByName("v");
+
+		// if version number from query string is not given or does not exist in allVersions array
+		if (
+			!queryStringVersionNumber ||
+			!allVersions.includes(queryStringVersionNumber)
+		) {
+			// set the versionNumber to the latest version
+			queryStringVersionNumber = allVersions[allVersions.length - 1];
+		}
+
 		(async () => {
-			// all versions of documentation
-			const allVersions = ["1.0.0", "1.1.0", "1.2.0"];
-
-			// version number from query string url
-			let queryStringVersionNumber = getParameterByName("v");
-
-			// if version number from query string is not given or does not exist in allVersions array
-			if (
-				!queryStringVersionNumber ||
-				!allVersions.includes(queryStringVersionNumber)
-			) {
-				// set the versionNumber to the latest version
-				queryStringVersionNumber = allVersions[allVersions.length - 1];
-			}
-
 			try {
+				// dynamically import the documentation file based on the version number
 				const { default: docs } = await import(
 					`/src/pages/Documentation/data/documentations/${queryStringVersionNumber}.js`
 				);
