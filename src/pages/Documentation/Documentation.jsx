@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import silverBoxDocumentationTableComponent from "./helpers/documentationTableComponent";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const Documentation = () => {
 	const [versionNumber, setVersionNumber] = useState("");
@@ -48,24 +50,28 @@ const Documentation = () => {
 	}
 
 	return (
-		<section id="silverBox-documentationSection">
-			<div className="container">
-				<div className="silverBox-tableWrapper">
-					<div>
-						<h2 className="silverBox-sectionHeader">
-							<span id="#silverBox-documentation">
-								Documentation{" "}
-								<span id="silverBox-documentation-version">
-									{versionNumber
-										? `v${versionNumber}`
-										: "Loading version..."}
+		<>
+			<Header />
+			<section id="silverBox-documentationSection">
+				<div className="container">
+					<div className="silverBox-tableWrapper">
+						<div>
+							<h2 className="silverBox-sectionHeader">
+								<span id="#silverBox-documentation">
+									Documentation{" "}
+									<span id="silverBox-documentation-version">
+										{versionNumber
+											? `v${versionNumber}`
+											: "Loading version..."}
+									</span>
 								</span>
-							</span>
-						</h2>
+							</h2>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+			<Footer />
+		</>
 	);
 };
 
