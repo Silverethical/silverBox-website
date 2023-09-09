@@ -1,7 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+	const hamburgerMenuIcon = useRef(null);
+	const silverBoxLogo = useRef(null);
+	const navigationList = useRef(null);
+
 	const [scrolled, setScrolled] = useState(false);
 
 	window.addEventListener("scroll", () => {
@@ -65,14 +69,14 @@ const Header = () => {
 		>
 			<div className="container">
 				<nav>
-					<Link to="/" id="logo">
+					<Link to="/" id="logo" ref={silverBoxLogo}>
 						<img
 							src="/src/assets/images/silverBox-TransParent.svg"
 							alt="SilverBox Logo"
 						/>
 						<span>SilverBox</span>
 					</Link>
-					<ul>
+					<ul ref={navigationList}>
 						<li>
 							<Link
 								to="/landing"
@@ -107,14 +111,38 @@ const Header = () => {
 							<Link
 								to="/documentation?v=latest"
 								onClick={() =>
-									handleLinkClick("#silverBox-documentationSection")
+									handleLinkClick(
+										"#silverBox-documentationSection"
+									)
 								}
 							>
 								Documentation
 							</Link>
 						</li>
 					</ul>
-					<div id="hamburger-menu">
+					<div
+						id="hamburger-menu"
+						ref={hamburgerMenuIcon}
+						onClick={() => {
+							if (
+								!navigationList.current.classList.contains(
+									"show"
+								)
+							) {
+								hamburgerMenuIcon.current.classList.add(
+									"rotate"
+								);
+								navigationList.current.classList.add("show");
+								silverBoxLogo.current.classList.add("hide");
+							} else {
+								hamburgerMenuIcon.current.classList.remove(
+									"rotate"
+								);
+								navigationList.current.classList.remove("show");
+								silverBoxLogo.current.classList.remove("hide");
+							}
+						}}
+					>
 						<div className="row"></div>
 						<div className="row"></div>
 						<div className="row"></div>
