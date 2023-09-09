@@ -1,9 +1,9 @@
 // Components Import
 import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import ExampleSection from "./components/ExampleSection";
-import UsageSection from "./components/UsageSection";
-import CreditsSection from "./components/CreditsSection";
+import HeroSection from "./pages/Home/HeroSection";
+import ExampleSection from "./pages/Home/ExampleSection";
+import UsageSection from "./pages/Home/UsageSection";
+import CreditsSection from "./pages/Home/CreditsSection";
 import Footer from "./components/Footer";
 
 const App = () => {
