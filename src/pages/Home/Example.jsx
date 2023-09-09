@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import copyConfig from "../../helpers/copyConfig";
 import customStringify from "../../helpers/customStringify";
+import PropTypes from "prop-types"
 
 const Example = ({ data }) => {
 	const iconRef = useRef(null);
@@ -71,5 +72,9 @@ const Example = ({ data }) => {
 		</div>
 	);
 };
+
+Example.propTypes = {
+	data: PropTypes.object
+}
 
 export default Example
