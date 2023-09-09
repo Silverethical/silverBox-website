@@ -1,6 +1,6 @@
 // import
-import replaceQuotedTextWithSpan from "./helpers/replaceQuotedTextWithSpan";
-import copyArgument from "./helpers/copyArgument.js";
+import replaceQuotedTextWithSpan from "./replaceQuotedTextWithSpan";
+import copyArgument from "./copyArgument.js";
 
 // selector: element that table is appended to
 function silverBoxDocumentationTableComponent(selector, documentation) {
