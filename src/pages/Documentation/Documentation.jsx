@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import silverBoxDocumentationTableComponent from "../Documentation/documentationTableComponent";
+import silverBoxDocumentationTableComponent from "./helpers/documentationTableComponent";
 
 const Documentation = () => {
 	const [versionNumber, setVersionNumber] = useState("");
