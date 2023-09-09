@@ -24,7 +24,7 @@ const Documentation = () => {
 			try {
 				// dynamically import the documentation file based on the version number
 				const { default: docs } = await import(
-					`/src/pages/Documentation/data/documentations/${queryStringVersionNumber}.js`
+					/* @vite-ignore */ `/src/pages/Documentation/data/documentations/${queryStringVersionNumber}.js`
 				);
 				setVersionNumber(queryStringVersionNumber);
 				silverBoxDocumentationTableComponent(
