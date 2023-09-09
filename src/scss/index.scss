@@ -15,6 +15,16 @@
 	}
 }
 
+main {
+	margin-top: 100px;
+
+	#silverBox-documentation-version {
+		vertical-align: middle;
+		font-size: var(--silverBox-documentation-version-font-size);
+		color: var(--silverBox-documentation-version-color);
+	}
+}
+
 html {
 	scroll-behavior: smooth;
 
