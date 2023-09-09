@@ -1,4 +1,11 @@
+import { useRef } from "react";
+import copyConfig from "../../helpers/copyConfig";
+
+
 const UsageSection = () => {
+	const iconRef = useRef(null);
+	const usage2Ref = useRef(null);
+
 	return (
 		<section id="silverBox-usageSection">
 			<div className="container">
@@ -19,16 +26,46 @@ const UsageSection = () => {
 						files:
 					</p>
 					<pre>
-						<code className="language-html step1"></code>
+						<code className="language-html step1">{`<link rel="stylesheet" href="silverBox.min.css" />
+							\n<script src="silverBox.min.js"></script>`}
+						</code>
 					</pre>
 					<p className="step2">
 						3. Call the silverBox function after the page has
 						loaded:
 					</p>
 					<pre id="usage-example">
-						<code className="language-javascript step2"></code>
-						<button className="silverBox-exampleCopyButton">
-							<img src="/src/assets/images/copyIcon.png" />
+						<code
+							className="language-javascript step2"
+							ref={usage2Ref}
+						>
+							{`silverBox({
+	alertIcon: "success",
+	text: "Your task has been completed.",
+	centerContent: true,
+	confirmButton: {
+		bgColor: "#3085d6",
+		borderColor: "#3085d6",
+		textColor: "#fff",
+		text: "Confirm",
+		closeOnClick: true
+	}
+})`}
+						</code>
+						<button
+							className="silverBox-exampleCopyButton"
+							onClick={() => {
+								copyConfig({
+									copy: usage2Ref.current.textContent,
+									iconElement: iconRef.current,
+									timeOut: 1500,
+								});
+							}}
+						>
+							<img
+								src="/src/assets/images/copyIcon.png"
+								ref={iconRef}
+							/>
 						</button>
 					</pre>
 				</div>
