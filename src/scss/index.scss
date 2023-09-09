@@ -1,4 +1,4 @@
-// @import "./modules/reset";
+@import "./modules/reset";
 // @import "./modules/fonts";
 // @import "./libraries/highlightJS/atom-one-dark-reasonable.min.scss";
 // @import "./silverBox.scss";
@@ -435,6 +435,7 @@ body {
 						box-shadow: var(--silverBox-button-box-shadow);
 						border-radius: 7px;
 						color: var(--white-in-white);
+						width: -moz-fit-content;
 						width: fit-content;
 						min-width: 130px;
 						font-size: var(--silverBox-example-button-font-size);
@@ -636,6 +637,7 @@ body {
 
 			.silverBox-document-show-more {
 				cursor: pointer;
+        width: -moz-fit-content;
 				width: fit-content;
 				display: inline-block;
 				padding: 1px 15px 1px 0px;
