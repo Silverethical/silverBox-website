@@ -5,33 +5,36 @@ import ExampleSection from "./pages/Home/ExampleSection";
 import UsageSection from "./pages/Home/UsageSection";
 import CreditsSection from "./pages/Home/CreditsSection";
 import Footer from "./components/Footer";
-// import Documentation from "./pages/documentation/Documentation";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Documentation from "./pages/documentation/Documentation";
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 
 const App = () => {
 	return (
-		<>
-			<BrowserRouter>
-				<Header />
+		<BrowserRouter>
+			<Header />
 
-				{/* <!-- main --> */}
-				<main>
-					{/* <!-- hero section --> */}
-					<HeroSection />
+			{/* main */}
+			<main>
+				<Routes>
+					<Route path="/" element={<Navigate to="/landing" />} />
+					<Route
+						path="/landing"
+						element={
+							<>
+								<HeroSection />
+								<ExampleSection />
+								<UsageSection />
+								<CreditsSection />
+							</>
+						}
+					/>
+					<Route path="/documentation" element={<Documentation />} />
+				</Routes>
+			</main>
 
-					{/* <!-- example --> */}
-					<ExampleSection />
-
-					{/* <!-- usage --> */}
-					<UsageSection />
-
-					{/* <!-- credits --> */}
-					<CreditsSection />
-				</main>
-				{/* <!-- footer --> */}
-				<Footer />
-			</BrowserRouter>
-		</>
+			{/* footer */}
+			<Footer />
+		</BrowserRouter>
 	);
 };
 
