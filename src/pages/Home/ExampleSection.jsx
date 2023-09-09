@@ -1,12 +1,19 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import copyConfig from "../../helpers/copyConfig";
-import customStringify from "../../helpers/customStringify"
+import customStringify from "../../helpers/customStringify";
 import examples from "../../data/example";
+
+// hljs
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark-reasonable.css";
 
 const ExampleComponent = ({ data }) => {
 	const iconRef = useRef(null);
 	const { explanation, config } = data;
 
+	useEffect(() => {
+		hljs.highlightAll();
+	}, []);
 
 	const handleCopyExample = () => {
 		// calls the copyConfig
@@ -32,10 +39,12 @@ const ExampleComponent = ({ data }) => {
 				{/* Example button wrapper */}
 				<div className="silverBox-example-button-wrapper">
 					{/* Show button */}
-					<button className="silverBox-showExample silverBox-exampleButtons" 
-					onClick={()=>{
-						silverBox(config)
-					}}>
+					<button
+						className="silverBox-showExample silverBox-exampleButtons"
+						onClick={() => {
+							silverBox(config);
+						}}
+					>
 						Show Me
 					</button>
 					{/* Copy config button */}
@@ -51,7 +60,9 @@ const ExampleComponent = ({ data }) => {
 			<div className="silverBox-exampleColumn silverBox-exampleColumn-code">
 				{/* Example config */}
 				<div className="silverBox-exampleConfig">
-					<pre><code>{customStringify(config)}</code></pre>
+					<pre>
+						<code>{customStringify(config)}</code>
+					</pre>
 					{/* Copy example button */}
 					<button
 						className="silverBox-exampleCopyButton"

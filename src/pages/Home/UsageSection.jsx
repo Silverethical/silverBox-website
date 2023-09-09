@@ -1,11 +1,17 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import copyConfig from "../../helpers/copyConfig";
 
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark-reasonable.css";
 
 const UsageSection = () => {
 	const iconRef = useRef(null);
 	const usage2Ref = useRef(null);
 
+	useEffect(() => {
+		hljs.highlightAll();
+	}, []);
+	
 	return (
 		<section id="silverBox-usageSection">
 			<div className="container">
@@ -26,7 +32,8 @@ const UsageSection = () => {
 						files:
 					</p>
 					<pre>
-						<code className="language-html step1">{`<link rel="stylesheet" href="silverBox.min.css" />
+						<code className="language-html step1">
+							{`<link rel="stylesheet" href="silverBox.min.css" />
 							\n<script src="silverBox.min.js"></script>`}
 						</code>
 					</pre>
