@@ -107,7 +107,7 @@ const Header = () => {
 							<Link
 								to="/documentation?v=latest"
 								onClick={() =>
-									handleLinkClick("#silverBox-header")
+									handleLinkClick("#silverBox-documentationSection")
 								}
 							>
 								Documentation
