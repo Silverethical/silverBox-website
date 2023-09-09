@@ -28,7 +28,7 @@ const UsageSection = () => {
 					<pre id="usage-example">
 						<code className="language-javascript step2"></code>
 						<button className="silverBox-exampleCopyButton">
-							<img src="/public/src/images/copyIcon.png" />
+							<img src="/src/assets/images/copyIcon.png" />
 						</button>
 					</pre>
 				</div>
