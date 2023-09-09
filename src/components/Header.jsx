@@ -1,6 +1,20 @@
+import { useState } from "react";
+
 const Header = () => {
+	const [scrolled, setScrolled] = useState(false);
+
+	window.addEventListener("scroll", () => {
+		const bodyScrollHeight = window.scrollY;
+
+		// if the scrollHeight is more than 50, the header will get a class
+		if (bodyScrollHeight > 50) setScrolled(true);
+		// else it will be removed
+		else setScrolled(false);
+	});
+
 	return (
-		<header id="silverBox-header">
+		<header id="silverBox-header" className={`${scrolled ? "scrolled" : ""} `}>
+			
 			<div className="container">
 				<nav>
 					<a href="/" id="logo">
