@@ -4,7 +4,7 @@ const Header = () => {
 			<div className="container">
 				<nav>
 					<a href="/" id="logo">
-						<img src="/public/src/images/silverBox-TransParent.svg" />
+						<img src="/src/assets/images/silverBox-TransParent.svg" />
 						<span>SilverBox</span>
 					</a>
 					<ul>
