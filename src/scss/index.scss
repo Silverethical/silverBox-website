@@ -16,10 +16,13 @@
 main {
 	margin-top: 100px;
 
-	#silverBox-documentation-version {
-		vertical-align: middle;
-		font-size: var(--silverBox-documentation-version-font-size);
-		color: var(--silverBox-documentation-version-color);
+	#silverBox-documentation {
+		margin-bottom: 30px;
+		#silverBox-documentation-version {
+			vertical-align: middle;
+			font-size: var(--silverBox-documentation-version-font-size);
+			color: var(--silverBox-documentation-version-color);
+		}
 	}
 }
 
@@ -625,6 +628,9 @@ body {
 
 	// documentation section
 	#silverBox-documentationSection {
+		.silverBox-sectionHeader{
+			margin-bottom: 40px;
+		}
 		.silverBox-tableWrapper {
 			overflow: hidden;
 			text-align: start;

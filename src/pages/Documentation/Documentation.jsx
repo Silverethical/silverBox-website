@@ -58,7 +58,7 @@ const Documentation = () => {
 						<div className="silverBox-tableWrapper">
 							<div>
 								<h2 className="silverBox-sectionHeader">
-									<span id="#silverBox-documentation">
+									<span id="silverBox-documentation">
 										Documentation{" "}
 										<span id="silverBox-documentation-version">
 											{versionNumber
