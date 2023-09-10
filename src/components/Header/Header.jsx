@@ -1,6 +1,6 @@
 import { useState, useRef, useLayoutEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { handleLinkClick, handleTitleChange } from "../Header";
 const Header = () => {
 	const hamburgerMenuIcon = useRef(null);
 	const silverBoxLogo = useRef(null);
@@ -15,41 +15,14 @@ const Header = () => {
 		else setScrolled(false);
 	});
 
-	const navigate = useNavigate();
 	const location = useLocation();
+	const navigate = useNavigate();
 
 	// Scroll to the top if the path changes
 	useLayoutEffect(() => {
 		window.scrollTo(0, 0);
+		handleTitleChange();
 	}, [location.pathname]);
-
-	const handleLinkClick = (hash) => {
-		const targetElement = document.querySelector(hash);
-
-		// If in documentation path, this code executes
-		if (location.pathname.includes("documentation")) {
-			// navigate to /landing route
-			navigate("/landing");
-
-			// Use setTimeOut so that the code runs after navigated to landing
-			setTimeout(() => {
-				// Reselect the target element after navigating to landing
-				const updatedTargetElement = document.querySelector(hash);
-
-				if (updatedTargetElement) {
-					// scrolls to the element
-					updatedTargetElement.scrollIntoView();
-				}
-			}, 0);
-		}
-
-		// If already in landing, scroll to the element
-		if (location.pathname.includes("landing")) {
-			if (targetElement) {
-				targetElement.scrollIntoView();
-			}
-		}
-	};
 
 	return (
 		<header
@@ -70,7 +43,11 @@ const Header = () => {
 							<Link
 								to="/landing"
 								onClick={() =>
-									handleLinkClick("#silverBox-heroSection")
+									handleLinkClick(
+										"#silverBox-heroSection",
+										location,
+										navigate
+									)
 								}
 							>
 								Intro
@@ -80,7 +57,11 @@ const Header = () => {
 							<Link
 								to="/landing"
 								onClick={() =>
-									handleLinkClick("#silverBox-exampleSection")
+									handleLinkClick(
+										"#silverBox-exampleSection",
+										location,
+										navigate
+									)
 								}
 							>
 								Example
@@ -90,7 +71,11 @@ const Header = () => {
 							<Link
 								to="/landing"
 								onClick={() =>
-									handleLinkClick("#silverBox-usageSection")
+									handleLinkClick(
+										"#silverBox-usageSection",
+										location,
+										navigate
+									)
 								}
 							>
 								Usage
@@ -101,7 +86,9 @@ const Header = () => {
 								to="/documentation?v=latest"
 								onClick={() =>
 									handleLinkClick(
-										"#silverBox-documentationSection"
+										"#silverBox-documentationSection",
+										location,
+										navigate
 									)
 								}
 							>
