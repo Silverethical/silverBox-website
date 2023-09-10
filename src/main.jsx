@@ -18,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 				<Route path="/" element={<Navigate to="/landing" />} />
 				<Route path="/landing" element={<App />} />
 				<Route path="/documentation" element={<Documentation />} />
+				<Route path="*" element={<Navigate to="/landing" />} />
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>
