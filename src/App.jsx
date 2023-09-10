@@ -4,7 +4,7 @@ import { useEffect } from "react";
 // Components Import
 import Header from "./components/Header/Header";
 import HeroSection from "./pages/Home/HeroSection";
-import ExampleSection from "./pages/Home/ExampleSection";
+import ExampleSection from "./pages/Home/Example/ExampleSection";
 import UsageSection from "./pages/Home/UsageSection";
 import CreditsSection from "./pages/Home/CreditsSection";
 import Footer from "./components/Footer";

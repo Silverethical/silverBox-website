@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import copyConfig from "../../helpers/copyConfig";
-import customStringify from "../../helpers/customStringify";
+import copyConfig from "../../../helpers/copyConfig";
+import customStringify from "../../../helpers/customStringify";
 import PropTypes from "prop-types"
 
 const Example = ({ data }) => {

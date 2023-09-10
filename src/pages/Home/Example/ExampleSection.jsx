@@ -1,5 +1,5 @@
 // elpers
-import examples from "../../data/example";
+import examples from "../../../data/example";
 
 // components
 import Example from "./Example";
