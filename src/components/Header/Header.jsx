@@ -1,13 +1,12 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import handleLinkClick from "./helpers/handleLinkClick";
 import handleTitle from "./helpers/handleTitleChange";
+import NavigationLinks from "./NavigationLinks";
 
 const Header = () => {
 	const hamburgerMenuIcon = useRef(null);
 	const silverBoxLogo = useRef(null);
 	const navigationList = useRef(null);
-
 	const [scrolled, setScrolled] = useState(false);
 
 	window.addEventListener("scroll", () => {
@@ -40,64 +39,9 @@ const Header = () => {
 						/>
 						<span>SilverBox</span>
 					</Link>
-					<ul ref={navigationList}>
-						<li>
-							<Link
-								to="/landing"
-								onClick={() =>
-									handleLinkClick(
-										"#silverBox-heroSection",
-										location,
-										navigate
-									)
-								}
-							>
-								Intro
-							</Link>
-						</li>
-						<li>
-							<Link
-								to="/landing"
-								onClick={() =>
-									handleLinkClick(
-										"#silverBox-exampleSection",
-										location,
-										navigate
-									)
-								}
-							>
-								Example
-							</Link>
-						</li>
-						<li>
-							<Link
-								to="/landing"
-								onClick={() =>
-									handleLinkClick(
-										"#silverBox-usageSection",
-										location,
-										navigate
-									)
-								}
-							>
-								Usage
-							</Link>
-						</li>
-						<li className="silverBox-documentation-header">
-							<Link
-								to="/documentation?v=latest"
-								onClick={() =>
-									handleLinkClick(
-										"#silverBox-documentationSection",
-										location,
-										navigate
-									)
-								}
-							>
-								Documentation
-							</Link>
-						</li>
-					</ul>
+
+					<NavigationLinks location={location} navigate={navigate} />
+
 					<div
 						id="hamburger-menu"
 						ref={hamburgerMenuIcon}
