@@ -33,12 +33,12 @@ const Example = ({ data }) => {
 				<div className="silverBox-example-button-wrapper">
 					{/* Show button */}
 					<button
-						className="silverBox-showExample silverBox-exampleButtons"
+						className="silverBox-preview silverBox-exampleButtons"
 						onClick={() => {
 							silverBox(config);
 						}}
 					>
-						Show Me
+						Preview
 					</button>
 					{/* Copy config button */}
 					<button

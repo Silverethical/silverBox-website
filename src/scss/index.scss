@@ -114,8 +114,10 @@ html {
 	--silverBox-footer-font-size: 14px;
 	// general
 	--primary-color: #3286cf;
+	--teamMembers-bg-color: #282C34;
 	--box-color: #151f33;
 	--get-silverBox-color: #2f3237;
+	--preview-button-bg-color:#282C34;
 	--silverBox-scroll-margin-top: 15vh;
 
 	// body
@@ -124,8 +126,8 @@ html {
 	--third-body-bgColor: #0f1726;
 
 	// button
-	--button-bg-color: #2f3237;
-	--silverBox-button-hover-bgColor: #383c3f;
+	--button-bg-color: var(--button-bg-color);
+	--silverBox-button-hover-bgColor: #1E285A;
 
 	// header
 	--header-bg-color: #0f192d;
@@ -133,12 +135,12 @@ html {
 	--header-color: #cacaca;
 
 	// banner
-	--banner-color: #d9884c;
 	--hero-section-color: #6a7a88;
-	--get-silverBox-button-bg-color: #1b2a52;
+	--get-silverBox-color: #3286CF;
+	--get-silverBox-button-bg-color: #1C2840;
 
 	// shadow
-	--silverBox-button-box-shadow: 1px 3px 5px #07070740;
+	--silverBox-button-box-shadow: 0px 4px 7px 0px #00000040;;
 	// documentation
 	--document-border-color: #767d8a99;
 	--document-indicator-color: #9f9f9f;
@@ -224,7 +226,7 @@ body {
 		gap: 20px 0;
 		margin: 0 auto;
 		width: 90vw;
-		max-width: 950px;
+		max-width: 1200px;
 		padding: 65px 10px 85px 10px;
 		position: relative;
 	}
@@ -304,7 +306,7 @@ body {
 
 							&::after {
 								content: "";
-								background-color: #7e7e7e;
+								background-color: var(--primary-color);
 								width: 0;
 								height: 2px;
 								position: absolute;
@@ -318,7 +320,7 @@ body {
 							}
 
 							&:hover {
-								color: #7e7e7e;
+								color: var(--primary-color);
 							}
 						}
 					}
@@ -399,7 +401,7 @@ body {
 				align-items: center;
 				padding: 5px 22px;
 				background: var(--get-silverBox-button-bg-color);
-				color: var(--banner-color);
+				color: var(--get-silverBox-color);
 				box-shadow: var(--silverBox-button-box-shadow);
 				border-radius: 10px;
 				font-weight: var(--silverBox-hero-section-button-font-weight);
@@ -464,13 +466,15 @@ body {
 						transition: 0.3s ease-in-out;
 
 						// show example
-						&.silverBox-showExample {
-							background: var(--box-color);
+						&.silverBox-preview {
+							background: var(--preview-button-bg-color);
 
 							&:hover {
-								background-color: var(
-									--silverBox-button-hover-bgColor
-								);
+								box-shadow: 0px -3px 1px 0px rgba(0, 0, 0, 0.25) inset;
+							}
+							
+							&:active {
+								transform: scale(0.95);
 							}
 						}
 
@@ -581,7 +585,7 @@ body {
 				border-radius: 15px;
 				padding: 14.5px 60px 14.5px 16px;
 				transition: all 500ms ease-in-out;
-				background-color: var(--box-color);
+				background-color: var(--teamMembers-bg-color);
 				color: var(--white-in-white);
 				font-weight: var(
 					--silverBox-credit-section-team-member-font-weight
@@ -614,7 +618,8 @@ body {
 				}
 
 				&:hover {
-					background-color: #383c3f;
+					background: #363A42;
+
 
 					.silverBox-memberInfo {
 						.silverBox-memberName {
@@ -845,6 +850,18 @@ body {
 		#sweetAlert,
 		#Untitled-UI {
 			text-decoration: underline;
+			transition: 0.2s;
+		}
+		#sweetAlert{
+			&:hover {
+				color:#3085d6  ;
+
+			}
+		}	
+		#Untitled-UI{
+			&:hover {
+				color: #007BFF;
+			}
 		}
 	}
 }
