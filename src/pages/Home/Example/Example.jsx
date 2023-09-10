@@ -11,14 +11,14 @@ const Example = ({ data }) => {
 	const handleCopyExample = () => {
 		// calls the copyConfig
 		copyConfig({
-			copy: customStringify(config),
+			copy: `SilverBox(${customStringify(config)})`,
 			iconElement: iconRef.current,
 			timeOut: 1500,
 		});
 	};
 
 	const handleCopyButton = () => {
-		copyConfig({ copy: config });
+		copyConfig({ copy: `SilverBox(${customStringify(config)})` });
 	};
 
 	return (
