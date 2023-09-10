@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useRef, useLayoutEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
 	const hamburgerMenuIcon = useRef(null);
@@ -11,15 +11,14 @@ const Header = () => {
 	window.addEventListener("scroll", () => {
 		const bodyScrollHeight = window.scrollY;
 
-		// if the scrollHeight is more than 50, the header will get a class
 		if (bodyScrollHeight > 50) setScrolled(true);
-		// else it will be removed
 		else setScrolled(false);
 	});
 
 	const navigate = useNavigate();
+	const location = useLocation();
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const handleSmoothScrolling = () => {
 			const hash = window.location.hash;
 			if (hash) {
@@ -33,7 +32,7 @@ const Header = () => {
 			}
 		};
 
-		handleSmoothScrolling(); // Call it initially to handle scrolling on page load
+		handleSmoothScrolling();
 
 		window.addEventListener("hashchange", handleSmoothScrolling);
 
@@ -41,6 +40,10 @@ const Header = () => {
 			window.removeEventListener("hashchange", handleSmoothScrolling);
 		};
 	}, []);
+
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0); // Scroll to top whenever the path changes
+	}, [location.pathname]); // Trigger effect when location.pathname changes
 
 	const handleLinkClick = (hash) => {
 		const targetElement = document.querySelector(hash);
