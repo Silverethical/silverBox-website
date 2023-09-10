@@ -52,24 +52,26 @@ const Documentation = () => {
 	return (
 		<>
 			<Header />
-			<section id="silverBox-documentationSection">
-				<div className="container">
-					<div className="silverBox-tableWrapper">
-						<div>
-							<h2 className="silverBox-sectionHeader">
-								<span id="#silverBox-documentation">
-									Documentation{" "}
-									<span id="silverBox-documentation-version">
-										{versionNumber
-											? `v${versionNumber}`
-											: "Loading version..."}
+			<main>
+				<section id="silverBox-documentationSection">
+					<div className="container">
+						<div className="silverBox-tableWrapper">
+							<div>
+								<h2 className="silverBox-sectionHeader">
+									<span id="#silverBox-documentation">
+										Documentation{" "}
+										<span id="silverBox-documentation-version">
+											{versionNumber
+												? `v${versionNumber}`
+												: "Loading version..."}
+										</span>
 									</span>
-								</span>
-							</h2>
+								</h2>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</main>
 			<Footer />
 		</>
 	);
