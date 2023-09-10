@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 // highlightJs imports
 import hljs from "highlight.js";
-import "highlight.js/styles/atom-one-dark-reasonable.css";
+import "./scss/libraries/_atom-one-dark-reasonable.scss";
 
 
 const App = () => {
