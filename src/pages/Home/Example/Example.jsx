@@ -35,6 +35,7 @@ const Example = ({ data }) => {
 					<button
 						className="silverBox-preview silverBox-exampleButtons"
 						onClick={() => {
+							// eslint-disable-next-line no-undef
 							silverBox(config);
 						}}
 					>
