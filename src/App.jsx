@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 
 // Components Import
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import HeroSection from "./pages/Home/HeroSection";
 import ExampleSection from "./pages/Home/ExampleSection";
 import UsageSection from "./pages/Home/UsageSection";

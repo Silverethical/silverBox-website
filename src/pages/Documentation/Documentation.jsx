@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import silverBoxDocumentationTableComponent from "./helpers/documentationTableComponent";
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
 
 const Documentation = () => {
