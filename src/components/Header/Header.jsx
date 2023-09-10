@@ -1,6 +1,8 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { handleLinkClick, handleTitleChange } from "../Header";
+import handleLinkClick from "./helpers/handleLinkClick";
+import handleTitle from "./helpers/handleTitleChange";
+
 const Header = () => {
 	const hamburgerMenuIcon = useRef(null);
 	const silverBoxLogo = useRef(null);
@@ -21,7 +23,7 @@ const Header = () => {
 	// Scroll to the top if the path changes
 	useLayoutEffect(() => {
 		window.scrollTo(0, 0);
-		handleTitleChange();
+		handleTitle();
 	}, [location.pathname]);
 
 	return (
