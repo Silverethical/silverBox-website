@@ -63,7 +63,7 @@ const Example = ({ data }) => {
 						onClick={handleCopyExample}
 					>
 						<img
-							src="/src/assets/images/copyIcon.png"
+							src="/images/copyIcon.png"
 							alt="Copy"
 							ref={iconRef}
 						/>

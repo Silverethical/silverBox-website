@@ -70,7 +70,7 @@ const UsageSection = () => {
 							}}
 						>
 							<img
-								src="/src/assets/images/copyIcon.png"
+								src="/images/copyIcon.png"
 								ref={iconRef}
 							/>
 						</button>

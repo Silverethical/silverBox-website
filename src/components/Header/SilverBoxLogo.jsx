@@ -5,7 +5,7 @@ const SilverBoxLogo = ({ silverBoxLogoRef }) => {
 	return (
 		<Link to="/" id="logo" ref={silverBoxLogoRef}>
 			<img
-				src="/src/assets/images/silverBox-TransParent.svg"
+				src="./images/silverBox-TransParent.png"
 				alt="SilverBox Logo"
 			/>
 			<span>SilverBox</span>
