@@ -1,25 +1,27 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
 	return (
 		<footer>
 			<br />
 			Special thanks to{" "}
-			<a
-				href="https://sweetalert2.github.io/"
+			<Link
+				to="https://sweetalert2.github.io/"
 				target="_blank"
 				id="sweetAlert"
 				rel="noreferrer"
 			>
 				SweetAlert2{" "}
-			</a>
+			</Link>
 			and{" "}
-			<a
-				href="https://www.untitledui.com/"
+			<Link
+				to="https://www.untitledui.com/"
 				target="_blank"
 				id="Untitled-UI"
 				rel="noreferrer"
 			>
 				Untitled UI
-			</a>
+			</Link>
 		</footer>
 	);
 };
