@@ -18,49 +18,35 @@ const Header = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 
+	// Scroll to the top if the path changes
 	useLayoutEffect(() => {
-		const handleSmoothScrolling = () => {
-			const hash = window.location.hash;
-			if (hash) {
-				const targetElement = document.querySelector(hash);
-				if (targetElement) {
-					targetElement.scrollIntoView({
-						behavior: "smooth",
-						block: "start",
-					});
-				}
-			}
-		};
-
-		handleSmoothScrolling();
-
-		window.addEventListener("hashchange", handleSmoothScrolling);
-
-		return () => {
-			window.removeEventListener("hashchange", handleSmoothScrolling);
-		};
-	}, []);
-
-	useLayoutEffect(() => {
-		window.scrollTo(0, 0); // Scroll to top whenever the path changes
-	}, [location.pathname]); // Trigger effect when location.pathname changes
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
 
 	const handleLinkClick = (hash) => {
 		const targetElement = document.querySelector(hash);
-		if (targetElement) {
-			if (window.location.pathname === "/landing") {
-				targetElement.scrollIntoView({
-					behavior: "smooth",
-					block: "start",
-				});
-			} else {
-				navigate(`/landing${hash}`);
-				setTimeout(() => {
-					targetElement.scrollIntoView({
-						behavior: "smooth",
-						block: "start",
-					});
-				}, 0);
+
+		// If in documentation path, this code executes
+		if (location.pathname.includes("documentation")) {
+			// navigate to /landing route
+			navigate("/landing");
+
+			// Use setTimeOut so that the code runs after navigated to landing
+			setTimeout(() => {
+				// Reselect the target element after navigating to landing
+				const updatedTargetElement = document.querySelector(hash);
+
+				if (updatedTargetElement) {
+					// scrolls to the element
+					updatedTargetElement.scrollIntoView();
+				}
+			}, 0);
+		}
+
+		// If already in landing, scroll to the element
+		if (location.pathname.includes("landing")) {
+			if (targetElement) {
+				targetElement.scrollIntoView();
 			}
 		}
 	};
@@ -68,7 +54,7 @@ const Header = () => {
 	return (
 		<header
 			id="silverBox-header"
-			className={`${scrolled ? "scrolled" : ""} `}
+			className={`${scrolled ? "scrolled" : ""}`}
 		>
 			<div className="container">
 				<nav>
