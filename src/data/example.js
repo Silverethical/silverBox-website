@@ -6,6 +6,11 @@ const examples = [
 				text: "Success",
 				alertIcon: "success",
 			},
+			confirmButton: {
+				show:true,
+				bgColor:"green",
+				borderColor:"green",
+			},
 			text: "Your task has been completed.",
 		},
 	},

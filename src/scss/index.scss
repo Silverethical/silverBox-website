@@ -481,10 +481,10 @@ body {
 						// copy example code
 						&.silverBox-copyConfig {
 							display: none;
-							background: var(--header-scrolled-bg-color);
+							background: var(--preview-button-bg-color);
 
 							&:hover {
-								background-color: #232c3d;
+								box-shadow: 0px -3px 1px 0px rgba(0, 0, 0, 0.25) inset;
 							}
 						}
 					}
