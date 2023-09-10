@@ -2,6 +2,8 @@ import { useState, useRef, useLayoutEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import handleTitle from "./helpers/handleTitleChange";
 import NavigationLinks from "./NavigationLinks";
+import handleHamburgerMenuToggle from "./helpers/handleHamburgerMenuClick";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Header = () => {
 	const hamburgerMenuIcon = useRef(null);
@@ -51,28 +53,14 @@ const Header = () => {
 						id="hamburger-menu"
 						ref={hamburgerMenuIcon}
 						onClick={() => {
-							if (
-								!navigationList.current.classList.contains(
-									"show"
-								)
-							) {
-								hamburgerMenuIcon.current.classList.add(
-									"rotate"
-								);
-								navigationList.current.classList.add("show");
-								silverBoxLogo.current.classList.add("hide");
-							} else {
-								hamburgerMenuIcon.current.classList.remove(
-									"rotate"
-								);
-								navigationList.current.classList.remove("show");
-								silverBoxLogo.current.classList.remove("hide");
-							}
+							handleHamburgerMenuToggle({
+								navigationList,
+								silverBoxLogo,
+								hamburgerMenuIcon,
+							});
 						}}
 					>
-						<div className="row"></div>
-						<div className="row"></div>
-						<div className="row"></div>
+						<HamburgerMenu />
 					</div>
 				</nav>
 			</div>
