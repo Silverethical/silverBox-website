@@ -2,7 +2,6 @@ import { useState, useRef, useLayoutEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import handleTitle from "./helpers/handleTitleChange";
 import NavigationLinks from "./NavigationLinks";
-import handleHamburgerMenuToggle from "./helpers/handleHamburgerMenuClick";
 import HamburgerMenu from "./HamburgerMenu";
 import SilverBoxLogo from "./SilverBoxLogo";
 
@@ -35,7 +34,6 @@ const Header = () => {
 		>
 			<div className="container">
 				<nav>
-
 					<SilverBoxLogo silverBoxLogoRef={silverBoxLogo} />
 
 					<ul ref={navigationList}>
@@ -45,19 +43,11 @@ const Header = () => {
 						/>
 					</ul>
 
-					<div
-						id="hamburger-menu"
-						ref={hamburgerMenuIcon}
-						onClick={() => {
-							handleHamburgerMenuToggle({
-								navigationList,
-								silverBoxLogo,
-								hamburgerMenuIcon,
-							});
-						}}
-					>
-						<HamburgerMenu />
-					</div>
+					<HamburgerMenu
+						hamburgerMenuIcon={hamburgerMenuIcon}
+						silverBoxLogo={silverBoxLogo}
+						navigationList={navigationList}
+					/>
 				</nav>
 			</div>
 		</header>
