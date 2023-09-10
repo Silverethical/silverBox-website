@@ -17,6 +17,7 @@ const App = () => {
 	useEffect(() => {
         hljs.highlightAll();
     }, []);
+
 	return (
 		<>
 			<Header />
