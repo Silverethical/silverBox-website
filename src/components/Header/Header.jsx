@@ -1,9 +1,10 @@
 import { useState, useRef, useLayoutEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import handleTitle from "./helpers/handleTitleChange";
 import NavigationLinks from "./NavigationLinks";
 import handleHamburgerMenuToggle from "./helpers/handleHamburgerMenuClick";
 import HamburgerMenu from "./HamburgerMenu";
+import SilverBoxLogo from "./SilverBoxLogo";
 
 const Header = () => {
 	const hamburgerMenuIcon = useRef(null);
@@ -34,13 +35,8 @@ const Header = () => {
 		>
 			<div className="container">
 				<nav>
-					<Link to="/" id="logo" ref={silverBoxLogo}>
-						<img
-							src="/src/assets/images/silverBox-TransParent.svg"
-							alt="SilverBox Logo"
-						/>
-						<span>SilverBox</span>
-					</Link>
+
+					<SilverBoxLogo silverBoxLogoRef={silverBoxLogo} />
 
 					<ul ref={navigationList}>
 						<NavigationLinks
