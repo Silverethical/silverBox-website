@@ -54,7 +54,7 @@ const Example = ({ data }) => {
 				{/* Example config */}
 				<div className="silverBox-exampleConfig">
 					<pre>
-						<code>{customStringify(config)}</code>
+						<code>SilverBox({customStringify(config)})</code>
 					</pre>
 					{/* Copy example button */}
 					<button
