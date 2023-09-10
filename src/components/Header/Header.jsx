@@ -40,7 +40,12 @@ const Header = () => {
 						<span>SilverBox</span>
 					</Link>
 
-					<NavigationLinks location={location} navigate={navigate} />
+					<ul ref={navigationList}>
+						<NavigationLinks
+							location={location}
+							navigate={navigate}
+						/>
+					</ul>
 
 					<div
 						id="hamburger-menu"

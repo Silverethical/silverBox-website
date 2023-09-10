@@ -31,7 +31,7 @@ const NavigationLinks = ({ location, navigate }) => {
 	};
 
 	return (
-		<ul>
+		<>
 			{linksDetails.map((link, idx) => (
 				<li key={idx}>
 					<Link
@@ -42,7 +42,7 @@ const NavigationLinks = ({ location, navigate }) => {
 					</Link>
 				</li>
 			))}
-		</ul>
+		</>
 	);
 };
 
