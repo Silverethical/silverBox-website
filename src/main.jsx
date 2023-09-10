@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./scss/index.scss";
+
+// rrd imports
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
+
+// component imports
 import Documentation from "./pages/Documentation/Documentation.jsx";
+import App from "./App.jsx";
+
+// general style import
+import "./scss/index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>

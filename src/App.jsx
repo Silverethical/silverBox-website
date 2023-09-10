@@ -1,3 +1,4 @@
+// react imports
 import { useEffect } from "react";
 
 // Components Import
@@ -8,6 +9,7 @@ import UsageSection from "./pages/Home/UsageSection";
 import CreditsSection from "./pages/Home/CreditsSection";
 import Footer from "./components/Footer";
 
+// highlightJs imports
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark-reasonable.css";
 

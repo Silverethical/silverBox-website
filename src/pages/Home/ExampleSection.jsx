@@ -1,5 +1,8 @@
-import Example from "./Example";
+// elpers
 import examples from "../../data/example";
+
+// components
+import Example from "./Example";
 
 const ExampleSection = () => {
 	return (

@@ -1,10 +1,15 @@
+// react imports
 import { useRef,} from "react";
+
+// elpers
 import copyConfig from "../../helpers/copyConfig";
 
 
 const UsageSection = () => {
+
+	// refs
 	const iconRef = useRef(null);
-	const usage2Ref = useRef(null);
+	const usageRef = useRef(null);
 
 	
 	return (
@@ -39,7 +44,7 @@ const UsageSection = () => {
 					<pre id="usage-example">
 						<code
 							className="language-javascript step2"
-							ref={usage2Ref}
+							ref={usageRef}
 						>
 							{`silverBox({
 	alertIcon: "success",
@@ -58,7 +63,7 @@ const UsageSection = () => {
 							className="silverBox-exampleCopyButton"
 							onClick={() => {
 								copyConfig({
-									copy: usage2Ref.current.textContent,
+									copy: usageRef.current.textContent,
 									iconElement: iconRef.current,
 									timeOut: 1500,
 								});

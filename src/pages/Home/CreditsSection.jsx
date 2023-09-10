@@ -1,5 +1,7 @@
-// import teamMembers array
+// react imports
 import { useEffect, useState } from "react";
+
+// import teamMembers array
 import silverBoxTeamMembers from "../../data/TeamMembers";
 
 /**
