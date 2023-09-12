@@ -39,7 +39,7 @@ const examples = [
 		explanation: "Auto closing pop-up message with a timer.",
 		config: {
 			timer: 2000,
-			customIcon: "src/assets/images/lightTimeout.png",
+			customIcon: "/images/lightTimeout.png",
 			title: {
 				text: "You are so cute",
 			},
@@ -60,7 +60,7 @@ const examples = [
 		explanation:
 			"A login modal with a custom icon, a footer, and 2 different types of inputs.",
 		config: {
-			customIcon: "src/assets/images/loginExample.png",
+			customIcon: "/images/loginExample.png",
 			title: {
 				text: "Login",
 			},
