@@ -11,14 +11,22 @@ import App from "./App.jsx";
 // general style import
 import "./scss/index.scss";
 
+// constants import
+import { basePath } from "./constants";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Navigate to="/landing" />} />
-				<Route path="/landing" element={<App />} />
-				<Route path="/documentation" element={<Documentation />} />
-				<Route path="*" element={<Navigate to="/landing" />} />
+				<Route
+					path={`${basePath}/`}
+					element={<Navigate to={`${basePath}/landing`} />}
+				/>
+				<Route path={`${basePath}/landing`} element={<App />} />
+				<Route
+					path={`${basePath}/documentation`}
+					element={<Documentation />}
+				/>
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>

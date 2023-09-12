@@ -1,26 +1,27 @@
 import { Link } from "react-router-dom";
 import handleLinkClick from "./helpers/handleLinkClick";
 import PropTypes from "prop-types";
+import { basePath } from "../../constants";
 
 const linksDetails = [
 	{
 		name: "Intro",
-		path: "/landing",
+		path: `${basePath}/landing`,
 		relatedSection: "#silverBox-heroSection",
 	},
 	{
 		name: "Example",
-		path: "/landing",
+		path: `${basePath}/landing`,
 		relatedSection: "#silverBox-exampleSection",
 	},
 	{
 		name: "Usage",
-		path: "/landing",
+		path: `${basePath}/landing`,
 		relatedSection: "#silverBox-usageSection",
 	},
 	{
 		name: "Documentation",
-		path: "/documentation?v=latest",
+		path:  `${basePath}/documentation?v=latest`,
 		relatedSection: "#silverBox-documentationSection",
 	},
 ];

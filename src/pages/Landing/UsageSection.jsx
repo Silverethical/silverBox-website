@@ -1,17 +1,16 @@
 // react imports
-import { useRef,} from "react";
+import { useRef } from "react";
 
 // elpers
 import copyConfig from "../../helpers/copyConfig";
 
+import { basePath } from "../../constants";
 
 const UsageSection = () => {
-
 	// refs
 	const iconRef = useRef(null);
 	const usageRef = useRef(null);
 
-	
 	return (
 		<section id="silverBox-usageSection">
 			<div className="container">
@@ -70,7 +69,7 @@ const UsageSection = () => {
 							}}
 						>
 							<img
-								src="/images/copyIcon.png"
+								src={`${basePath}/images/copyIcon.png`}
 								ref={iconRef}
 							/>
 						</button>
