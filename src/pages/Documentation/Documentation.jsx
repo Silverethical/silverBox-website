@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import silverBoxDocumentationTableComponent from "./helpers/documentationTableComponent";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
+import documentations from "./data/documentations/index";
 
 const Documentation = () => {
 	const [versionNumber, setVersionNumber] = useState("");
@@ -24,10 +25,11 @@ const Documentation = () => {
 
 		(async () => {
 			try {
-				// dynamically import the documentation file based on the version number
-				const { default: docs } = await import(
-					/* @vite-ignore */ `/src/pages/Documentation/data/documentations/${queryStringVersionNumber}.js`
-				);
+				const docs =
+					documentations[
+						`v${queryStringVersionNumber.replaceAll(".", "_")}`
+					];
+
 				setVersionNumber(queryStringVersionNumber);
 				silverBoxDocumentationTableComponent(
 					".silverBox-tableWrapper",
