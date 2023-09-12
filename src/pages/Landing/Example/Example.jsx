@@ -2,6 +2,7 @@ import { useRef } from "react";
 import copyConfig from "../../../helpers/copyConfig";
 import customStringify from "../../../helpers/customStringify";
 import PropTypes from "prop-types"
+import { basePath } from "../../../constants";
 
 const Example = ({ data }) => {
 	const iconRef = useRef(null);
@@ -63,7 +64,7 @@ const Example = ({ data }) => {
 						onClick={handleCopyExample}
 					>
 						<img
-							src="/images/copyIcon.png"
+							src={`${basePath}/images/copyIcon.png`}
 							alt="Copy"
 							ref={iconRef}
 						/>

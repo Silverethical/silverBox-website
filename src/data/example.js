@@ -1,3 +1,5 @@
+import { basePath } from "../constants";
+
 const examples = [
 	{
 		explanation: "Simple success alert.",
@@ -39,7 +41,7 @@ const examples = [
 		explanation: "Auto closing pop-up message with a timer.",
 		config: {
 			timer: 2000,
-			customIcon: "/images/lightTimeout.png",
+			customIcon: `${basePath}/images/lightTimeout.png`,
 			title: {
 				text: "You are so cute",
 			},
@@ -60,7 +62,7 @@ const examples = [
 		explanation:
 			"A login modal with a custom icon, a footer, and 2 different types of inputs.",
 		config: {
-			customIcon: "/images/loginExample.png",
+			customIcon: `${basePath}/images/loginExample.png`,
 			title: {
 				text: "Login",
 			},
