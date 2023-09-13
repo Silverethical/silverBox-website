@@ -23,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 					element={<Navigate to={`${basePath}/landing`} />}
 				/>
 				<Route path={`${basePath}/landing`} element={<App />} />
+				<Route path={`${basePath}/`} element={<App />} />
 				<Route
 					path={`${basePath}/documentation`}
 					element={<Documentation />}
