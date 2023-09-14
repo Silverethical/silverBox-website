@@ -1,5 +1,5 @@
 // react imports
-import { useEffect } from "react";
+import {useEffect} from "react";
 
 // Components Import
 import Header from "./components/Header/Header";
@@ -14,26 +14,24 @@ import hljs from "highlight.js";
 import "./scss/libraries/_atom-one-dark-reasonable.scss";
 
 const App = () => {
-	useEffect(() => {
-		hljs.highlightAll();
-	}, []);
+    useEffect(() => {
+        hljs.highlightAll();
+    }, []);
 
-	return (
-		<>
-			<Header />
+    return (<>
+        <Header/>
 
-			{/* main */}
-			<main>
-				<HeroSection />
-				<ExampleSection />
-				<UsageSection />
-				<CreditsSection />
-			</main>
+        {/* main */}
+        <main>
+            <HeroSection/>
+            <ExampleSection/>
+            <UsageSection/>
+            <CreditsSection/>
+        </main>
 
-			{/* footer */}
-			<Footer />
-		</>
-	);
+        {/* footer */}
+        <Footer/>
+    </>);
 };
 
 export default App;
