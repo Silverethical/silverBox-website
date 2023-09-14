@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 
 // component imports
-import Documentation from "./pages/Documentation/Documentation.jsx";
+import DocumentationRender from "./pages/Documentation/DocumentationRender.jsx";
 import App from "./App.jsx";
 
 // general style import
@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 				<Route path={`${basePath}/`} element={<App />} />
 				<Route
 					path={`${basePath}/documentation`}
-					element={<Documentation />}
+					element={<DocumentationRender />}
 				/>
 			</Routes>
 		</BrowserRouter>
