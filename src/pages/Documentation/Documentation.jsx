@@ -3,7 +3,7 @@ import SilverBoxDocumentationTableComponent from "./helpers/documentationTableCo
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
 import documentations from "./data/documentations/index";
-import getParameterByName from "./helpers/getParams";
+import getParameterByName from "./helpers/getParameterByName";
 
 const Documentation = () => {
     const [versionNumber, setVersionNumber] = useState("");
@@ -41,7 +41,10 @@ const Documentation = () => {
 
     return (
         <>
+            {/* Header component */}
             <Header />
+
+            {/* The main section */}
             <main>
                 <section id="silverBox-documentationSection">
                     <div className="container">
@@ -62,6 +65,8 @@ const Documentation = () => {
                     </div>
                 </section>
             </main>
+
+            {/* Footer Component */}
             <Footer />
         </>
     );
