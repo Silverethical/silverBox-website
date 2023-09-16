@@ -8,7 +8,6 @@ import ExampleSection from "./pages/Landing/Example/ExampleSection";
 import UsageSection from "./pages/Landing/UsageSection";
 import CreditsSection from "./pages/Landing/CreditsSection";
 import Footer from "./components/Footer";
-
 // highlightJs imports
 import hljs from "highlight.js";
 import "./scss/libraries/_atom-one-dark-reasonable.scss";
@@ -18,20 +17,21 @@ const App = () => {
         hljs.highlightAll();
     }, []);
 
-    return (<>
-        <Header/>
+    return (
+        <>
+            <Header />
+            {/* main */}
+            <main>
+                <HeroSection />
+                <ExampleSection />
+                <UsageSection />
+                <CreditsSection />
+            </main>
 
-        {/* main */}
-        <main>
-            <HeroSection/>
-            <ExampleSection/>
-            <UsageSection/>
-            <CreditsSection/>
-        </main>
-
-        {/* footer */}
-        <Footer/>
-    </>);
+            {/* footer */}
+            <Footer />
+        </>
+    );
 };
 
 export default App;

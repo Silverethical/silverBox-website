@@ -5,9 +5,11 @@ import Footer from "../../components/Footer";
 import documentations from "./data/documentations/index";
 import getParameterByName from "./helpers/getParameterByName";
 import Documentation from "./Documentation";
+import SideBar from "./Sidebar";
 
 const DocumentationRender = () => {
     const [versionNumber, setVersionNumber] = useState("");
+    const [docs, setDocs] = useState("");
 
     useEffect(() => {
         // All versions of documentation
@@ -33,10 +35,13 @@ const DocumentationRender = () => {
         if (versionNumber) {
             const docs =
                 documentations[`v${versionNumber.replaceAll(".", "_")}`];
+
             SilverBoxDocumentationTableComponent(
                 ".silverBox-tableWrapper",
                 docs
             );
+
+            setDocs(docs);
         }
     }, [versionNumber]);
 
@@ -47,6 +52,7 @@ const DocumentationRender = () => {
 
             {/* Documentation component */}
             <Documentation versionNumber={versionNumber}></Documentation>
+            <SideBar config={docs} />
 
             {/* Footer Component */}
             <Footer />
